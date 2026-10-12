@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flat Santa Maria - Maraponga, Fortaleza</title>
+    <meta name="description" content="Diárias a partir de R$120 com café da manhã incluso. Flat em Fortaleza, Maraponga. Pet friendly. WhatsApp para reservas.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #1f2937; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header { background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%); color: white; padding: 20px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        .logo h1 { font-size: 28px; font-weight: 700; }
+        .banner { background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; text-align: center; padding: 25px 20px; font-size: 22px; font-weight: 700; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .banner-icon { font-size: 28px; margin-right: 10px; }
+        .hero { width: 100%; height: 400px; background: #e5e7eb; display: flex; align-items: center; justify-content: center; color: #6b7280; font-size: 18px; }
+        .hero img { width: 100%; height: 100%; object-fit: cover; }
+        .section { padding: 60px 0; }
+        .section-title { font-size: 36px; font-weight: 700; margin-bottom: 30px; color: #1e40af; text-align: center; }
+        .pricing-table { background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden; margin: 30px 0; }
+        .pricing-table table { width: 100%; border-collapse: collapse; }
+        .pricing-table th { background: #1e40af; color: white; padding: 18px; text-align: left; font-weight: 600; }
+        .pricing-table td { padding: 16px 18px; border-bottom: 1px solid #e5e7eb; }
+        .pricing-table tr:last-child td { border-bottom: none; }
+        .pricing-table tr:hover { background: #f9fafb; }
+        .price { font-size: 20px; font-weight: 700; color: #10b981; }
+        .form-section { background: #f9fafb; border-radius: 12px; padding: 40px; margin: 40px 0; }
+        .form-group { margin-bottom: 25px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #374151; }
+        .form-group input, .form-group select { width: 100%; padding: 12px 16px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 16px; transition: border 0.3s; }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: #1e40af; }
+        .btn { background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 16px 32px; border: none; border-radius: 8px; font-size: 18px; font-weight: 700; cursor: pointer; width: 100%; transition: transform 0.2s; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(16,185,129,0.4); }
+        .total-box { background: #1e40af; color: white; padding: 25px; border-radius: 8px; text-align: center; margin: 20px 0; }
+        .total-box .label { font-size: 14px; opacity: 0.9; margin-bottom: 8px; }
+        .total-box .value { font-size: 42px; font-weight: 700; }
+        .alert { padding: 15px 20px; border-radius: 8px; margin: 15px 0; display: none; }
+        .alert-warning { background: #fef3c7; border-left: 4px solid #f59e0b; color: #92400e; }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin: 40px 0; }
+        .feature-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: transform 0.3s; }
+        .feature-card:hover { transform: translateY(-5px); box-shadow: 0 8px 16px rgba(0,0,0,0.12); }
+        .feature-icon { font-size: 40px; margin-bottom: 15px; }
+        .feature-title { font-size: 20px; font-weight: 700; margin-bottom: 10px; color: #1e40af; }
+        .feature-desc { color: #6b7280; line-height: 1.8; }
+        .map-container { width: 100%; height: 400px; border-radius: 12px; overflow: hidden; margin: 30px 0; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .map-container iframe { width: 100%; height: 100%; border: 0; }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none; transition: transform 0.3s; }
+        .whatsapp-float:hover { transform: scale(1.1); }
+        footer { background: #1f2937; color: #d1d5db; padding: 40px 0; text-align: center; margin-top: 60px; }
+        @media (max-width: 768px) {
+            .section-title { font-size: 28px; }
+            .banner { font-size: 18px; padding: 20px 15px; }
+            .hero { height: 250px; }
+            .form-section { padding: 25px; }
+            .total-box .value { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>🏨 Flat Santa Maria</h1>
+                    <p style="font-size:14px; opacity:0.9;">Maraponga - Fortaleza/CE</p>
+                </div>
+                <a href="https://wa.me/5585999726040" style="background:#25d366;color:white;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;">📱 WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="banner">
+        <span class="banner-icon">☕</span>Diárias a partir de R$ 120,00 com café da manhã incluso
+    </div>
+
+    <div class="hero">
+        <img src="images/fachada.jpg" alt="Fachada Flat Santa Maria" onerror="this.parentElement.innerHTML='<div style=text-align:center>📸<br>Adicione a foto fachada.jpg na pasta images/</div>'">
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Tabela de Preços</h2>
+            <div class="pricing-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Hóspedes</th>
+                            <th>Valor da Diária</th>
+                            <th>Observação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>01 pessoa</strong></td>
+                            <td class="price">R$ 120,00</td>
+                            <td>Valor inicial</td>
+                        </tr>
+                        <tr>
+                            <td><strong>02 pessoas</strong></td>
+                            <td class="price">R$ 180,00</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><strong>03 pessoas</strong></td>
+                            <td class="price">R$ 240,00</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><strong>04 pessoas</strong></td>
+                            <td class="price">R$ 300,00</td>
+                            <td>Suítes 03, 06, 09</td>
+                        </tr>
+                        <tr>
+                            <td><strong>05 pessoas</strong></td>
+                            <td class="price">R$ 360,00</td>
+                            <td>Apenas Suíte 02</td>
+                        </tr>
+                        <tr>
+                            <td><strong>🐕 Pet</strong></td>
+                            <td class="price">R$ 50,00/dia</td>
+                            <td>Cada pet - máx 2 pequeno porte</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="form-section">
+                <h3 style="font-size:28px;margin-bottom:25px;color:#1e40af;">Simule sua Reserva</h3>
+                <div class="form-group">
+                    <label>Quantidade de Hóspedes</label>
+                    <select id="hospedes" onchange="calcular()">
+                        <option value="120">01 pessoa - R$ 120,00/dia</option>
+                        <option value="180">02 pessoas - R$ 180,00/dia</option>
+                        <option value="240">03 pessoas - R$ 240,00/dia</option>
+                        <option value="300">04 pessoas - R$ 300,00/dia</option>
+                        <option value="360">05 pessoas - R$ 360,00/dia (Suíte 02)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Quantidade de Diárias</label>
+                    <input type="number" id="diarias" min="1" value="1" onchange="calcular()">
+                </div>
+                <div class="form-group">
+                    <label>Quantidade de Pets</label>
+                    <select id="pets" onchange="calcular()">
+                        <option value="0">0 pets</option>
+                        <option value="1">1 pet - R$ 50,00/dia</option>
+                        <option value="2">2 pets - R$ 100,00/dia</option>
+                    </select>
+                </div>
+                <div id="alerta" class="alert alert-warning"></div>
+                <div class="total-box">
+                    <div class="label">Valor Total da Estadia</div>
+                    <div class="value" id="total">R$ 120,00</div>
+                </div>
+                <button class="btn" onclick="reservar()">📱 Reservar pelo WhatsApp</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background:#f9fafb;">
+        <div class="container">
+            <h2 class="section-title">Comodidades</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">☕</div>
+                    <div class="feature-title">Café da Manhã Incluso</div>
+                    <div class="feature-desc">
+                        <strong>Segunda a sexta:</strong> 7:00 às 9:00h<br>
+                        <strong>Sábados e domingos:</strong> 7:00 às 10:00h
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🅿️</div>
+                    <div class="feature-title">Estacionamento</div>
+                    <div class="feature-desc">Vagas de estacionamento gratuitas na rua, em frente ao prédio</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📶</div>
+                    <div class="feature-title">Wi-Fi Grátis</div>
+                    <div class="feature-desc">Internet de alta velocidade em todas as suítes</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">❄️</div>
+                    <div class="feature-title">Ar-Condicionado</div>
+                    <div class="feature-desc">Todas as suítes climatizadas</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📺</div>
+                    <div class="feature-title">Smart TV</div>
+                    <div class="feature-desc">TV com canais e streaming</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚿</div>
+                    <div class="feature-title">Banho Quente</div>
+                    <div class="feature-desc">Chuveiro com aquecimento</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🐕</div>
+                    <div class="feature-title">Pet Friendly</div>
+                    <div class="feature-desc">Aceitamos até 2 pets de pequeno porte<br>R$ 50,00/dia cada</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Localização</h2>
+            <p style="text-align:center;font-size:18px;margin-bottom:20px;">
+                📍 Rua Carlos Studart, 651 - Jardim Cearense, Maraponga<br>Fortaleza - CE
+            </p>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.239!2d-38.567!3d-3.789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM8KwNDcnMjAuNCJTIDM4wrAzNCcwMS4yIlc!5e0!3m2!1spt-BR!2sbr!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background:#f9fafb;">
+        <div class="container">
+            <h2 class="section-title">Política de Cancelamento</h2>
+            <div style="max-width:700px;margin:0 auto;background:white;padding:30px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+                <p style="margin-bottom:15px;"><strong>✅ Cancelamento até 48h antes do check-in:</strong> Reembolso de 100% do valor pago</p>
+                <p style="margin-bottom:15px;"><strong>⚠️ Cancelamento entre 24h e 48h antes:</strong> Reembolso de 50% do valor pago</p>
+                <p><strong>❌ Cancelamento com menos de 24h:</strong> Sem reembolso</p>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/5585999726040" class="whatsapp-float" target="_blank">💬</a>
+
+    <footer>
+        <div class="container">
+            <p><strong>Flat Santa Maria</strong></p>
+            <p>Rua Carlos Studart, 651 - Jardim Cearense, Maraponga - Fortaleza/CE</p>
+            <p>WhatsApp: (85) 99972-6040</p>
+            <p style="margin-top:20px;opacity:0.7;">© 2026 Flat Santa Maria. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function calcular() {
+            const hospedes = parseFloat(document.getElementById('hospedes').value);
+            const diarias = parseInt(document.getElementById('diarias').value) || 1;
+            const pets = parseInt(document.getElementById('pets').value);
+            const total = (hospedes * diarias) + (pets * 50 * diarias);
+            document.getElementById('total').textContent = 'R$ ' + total.toFixed(2).replace('.', ',');
+            
+            const alerta = document.getElementById('alerta');
+            const numHospedes = document.getElementById('hospedes').selectedIndex + 1;
+            if (numHospedes === 4) {
+                alerta.textContent = '⚠️ Atenção: 4 pessoas apenas nas Suítes 03, 06 ou 09';
+                alerta.style.display = 'block';
+            } else if (numHospedes === 5) {
+                alerta.textContent = '⚠️ Atenção: 5 pessoas apenas na Suíte 02';
+                alerta.style.display = 'block';
+            } else {
+                alerta.style.display = 'none';
+            }
+        }
+        
+        function reservar() {
+            const hospedes = document.getElementById('hospedes').options[document.getElementById('hospedes').selectedIndex].text;
+            const diarias = document.getElementById('diarias').value;
+            const pets = document.getElementById('pets').options[document.getElementById('pets').selectedIndex].text;
+            const total = document.getElementById('total').textContent;
+            const msg = `Olá! Gostaria de fazer uma reserva no Flat Santa Maria:%0A%0A👥 ${hospedes}%0A📅 ${diarias} diária(s)%0A🐕 ${pets}%0A💰 Total: ${total}%0A%0APode me confirmar disponibilidade?`;
+            window.open(`https://wa.me/5585999726040?text=${msg}`, '_blank');
+        }
+        calcular();
+    </script>
+</body>
+</html>
