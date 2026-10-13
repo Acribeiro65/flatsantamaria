@@ -1,27 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head><style>
-@font-face {
-  font-family: "Optimistic";
-  font-style: normal;
-  font-weight: 400 600;
-  font-display: swap;
-  src: url("/fonts/OptimisticAI_VF_Optimized.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Optimistic Mono";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/fonts/OptimisticMono_W_TextRegular.woff2") format("woff2");
-}
-:where(html) {
-  font-family: "Optimistic", system-ui, sans-serif;
-}
-:where(code, pre, kbd, samp) {
-  font-family: "Optimistic Mono", ui-monospace, monospace;
-}
-</style>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flat Santa Maria - Maraponga, Fortaleza/CE</title>
@@ -73,6 +52,34 @@
         .review-highlight .score-text {color: #1a3a5f; font-weight: 600; margin-top: 5px;}
         .rating-bars {display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; margin-top: 15px; font-size: 0.9em;}
         .rating-item {display: flex; justify-content: space-between;}
+        
+        /* Botão flutuante WhatsApp */
+        .whatsapp-float {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background: #25d366;
+          color: white;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+          z-index: 999;
+          transition: transform 0.2s;
+          text-decoration: none;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); background: #128c7e; }
+        .whatsapp-float svg { width: 32px; height: 32px; }
+
+        /* Vídeo responsivo */
+        .video-wrapper {position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; margin-top: 15px; background: #000;}
+        .video-wrapper video {position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;}
+        .sound-btn {margin-top: 10px; background: #3498db; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: 600;}
+        .sound-btn:hover {background: #2980b9;}
+
         @media (max-width: 768px) {
             header h1 {font-size: 1.8em;}
             .hero {height: 250px;}
@@ -81,6 +88,7 @@
             .gallery {grid-template-columns: 1fr;}
             .reviews {grid-template-columns: 1fr;}
             .rating-bars {grid-template-columns: 1fr;}
+            .whatsapp-float { bottom: 15px; right: 15px; width: 56px; height: 56px; }
         }
     </style>
 </head>
@@ -125,7 +133,7 @@
                     <li>Incluso na diária</li>
                     <li>Café, pão, leite, ovos</li>
                     <li>Queijo, presunto, cuscuz</li>
-                    <li>Fruta, suco, etc</li>
+                    <li>Frutas, suco, etc</li>
                 </ul>
             </div>
 
@@ -138,6 +146,19 @@
                     <li>Opção paga: posto de combustível a 02 quadras, negociar direto com o frentista</li>
                 </ul>
             </div>
+        </div>
+
+        <!-- SEÇÃO VÍDEO COM SOM - ARQUIVO NA PASTA IMAGES -->
+        <div class="card">
+            <h3>🎥 Tour pelo Flat Santa Maria</h3>
+            <p>Ouça o ambiente e conheça nossas suítes, café da manhã e áreas comuns:</p>
+            <div class="video-wrapper">
+                <video id="flatVideo" controls muted autoplay loop playsinline>
+                    <source src="images/tour-flat.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeo HTML5.
+                </video>
+            </div>
+            <button class="sound-btn" onclick="document.getElementById('flatVideo').muted = false; this.style.display='none';">🔊 Ativar som do ambiente</button>
         </div>
 
         <div class="card">
@@ -275,9 +296,11 @@
                 <img src="images/suite5.jpg" alt="Suíte com armário e Smart TV">
                 <img src="images/cafe_manha1.jpg" alt="Mesa do café da manhã no corredor externo">
                 <img src="images/cafe_manha2.jpg" alt="Área do café da manhã com mesas">
+                <img src="images/cafe_manha3.jpg" alt="Café da manhã - mesa posta com toalha florida">
                 <img src="images/corredor1.jpg" alt="Corredor interno com plantas">
                 <img src="images/corredor2.jpg" alt="Corredor das suítes">
                 <img src="images/area_comum1.jpg" alt="Área comum externa com mesa e plantas">
+                <img src="images/area_comum2.jpg" alt="Corredor interno com extintor e vista">
                 <img src="images/cozinha1.jpg" alt="Cozinha compartilhada equipada com geladeira e fogão">
                 <img src="images/banheiro1.jpg" alt="Banheiro privativo da suíte">
                 <img src="images/banheiro2.jpg" alt="Banheiro com pia e vaso">
@@ -357,4 +380,9 @@
         <p>WhatsApp: (85) 99972-6040 | Pet Friendly 🐾</p>
         <p style="margin-top: 15px; opacity: 0.7;">© 2026 Flat Santa Maria. Todos os direitos reservados.</p>
     </footer>
-<script>(function(){var loc=location.href.replace(/#.*$/,"");var ATTR_NAMES=["data-product-id","data-productid","data-product_id","product-id","productid","product_id","data-
+
+    <!-- BOTÃO FLUTUANTE WHATSAPP -->
+    <a href="https://wa.me/5585999726040?text=Olá! Gostaria de fazer uma reserva no Flat Santa Maria." 
+       class="whatsapp-float" target="_blank" aria-label="Falar no WhatsApp">
+        <svg viewBox="0 0 32 32" fill="white">
+            <path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.044-.53-.044-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.087-.33.087-.612.043-.725-.025-.088-.236-.145-.46-.217zm-2.89-4.83c.29-.19.29-.38.29-.57 0-.19-.1-.38-.29-.57l-1.45-1.45c-.19-.19-.38-.29-.57-.29s-.38.1-.57.29l-1.45 1.45c-.19.19-.29.38-.29.57s.1.38.29.57l1.45 1.45c.19.19.38.29.57.29s.38-.1.57-.29l1.45-1.45zM16 0C7.164 0 0 7.163 0 16c0 2.827.734 5.476 2.015 7.78L.037 32l8.42-2.208C10.8 30.92 13.35 31.5 16 31.5
